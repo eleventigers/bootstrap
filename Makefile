@@ -23,6 +23,7 @@ build:
 	@echo "               ${CHECK}"
 	@printf "Prepping documentation assets..."
 	@cp js/tests/vendor/jquery.js docs/assets/js/
+	@cp node_modules/font-awesome/font/* docs/assets/fonts/
 	@echo "            ${CHECK}"
 	@printf "Compiling and minifying JavaScript..."
 	@cat js/transition.js js/alert.js js/button.js js/carousel.js js/collapse.js js/dropdown.js js/modal.js js/tooltip.js js/popover.js js/scrollspy.js js/tab.js js/affix.js > docs/assets/js/bootstrap.js

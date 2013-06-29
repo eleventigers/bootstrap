@@ -22,4 +22,7 @@
     , "recess": "1.1.7"
     , "connect": "2.1.3"
   }
+  , "dependencies": {
+    "font-awesome": "git://github.com/eleventigers/Font-Awesome#66efbe677cea4d3a05622a9e9ddf32579c34b5e8"
+  }
 }
