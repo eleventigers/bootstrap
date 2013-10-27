@@ -53,8 +53,8 @@ $(function () {
         popover.popover('show')
 
         ok($('.popover').length, 'popover was inserted')
-        equals($('.popover .popover-title').text(), '@fat', 'title correctly inserted')
-        equals($('.popover .popover-content').text(), 'loves writing tests （╯°□°）╯︵ ┻━┻', 'content correctly inserted')
+        equal($('.popover .popover-title').text(), '@fat', 'title correctly inserted')
+        equal($('.popover .popover-content').text(), 'loves writing tests （╯°□°）╯︵ ┻━┻', 'content correctly inserted')
 
         popover.popover('hide')
         ok(!$('.popover').length, 'popover was removed')
@@ -69,8 +69,28 @@ $(function () {
           .popover('show')
 
         ok($('.popover').length, 'popover was inserted')
-        equals($('.popover .popover-title').text(), '@mdo', 'title correctly inserted')
-        equals($('.popover .popover-content').text(), "loves data attributes (づ｡◕‿‿◕｡)づ ︵ ┻━┻", 'content correctly inserted')
+        equal($('.popover .popover-title').text(), '@mdo', 'title correctly inserted')
+        equal($('.popover .popover-content').text(), "loves data attributes (づ｡◕‿‿◕｡)づ ︵ ┻━┻", 'content correctly inserted')
+
+        popover.popover('hide')
+        ok(!$('.popover').length, 'popover was removed')
+        $('#qunit-fixture').empty()
+      })
+
+
+      test("should get title and content from attributes #2", function () {
+        $.support.transition = false
+        var popover = $('<a href="#" title="@mdo" data-content="loves data attributes (づ｡◕‿‿◕｡)づ ︵ ┻━┻" >@mdo</a>')
+          .appendTo('#qunit-fixture')
+          .popover({
+              title: 'ignored title option',
+              content: 'ignored content option'
+          })
+          .popover('show')
+
+        ok($('.popover').length, 'popover was inserted')
+        equal($('.popover .popover-title').text(), '@mdo', 'title correctly inserted')
+        equal($('.popover .popover-content').text(), "loves data attributes (づ｡◕‿‿◕｡)づ ︵ ┻━┻", 'content correctly inserted')
 
         popover.popover('hide')
         ok(!$('.popover').length, 'popover was removed')
